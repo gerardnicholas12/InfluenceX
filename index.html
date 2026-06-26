@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfluenceX | Creator Brand Collaboration Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar Section -->
+    <nav>
+        <a href="#home" class="logo">Influence<span>X</span></a>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#creators">Creators</a></li>
+            <li><a href="#brands">Brands</a></li>
+            <li><a href="#campaigns">Campaigns</a></li>
+            <li><a href="#locator">Locator</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#register" class="nav-cta">Register</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Single Page Application Content -->
+    <main>
+        <!-- Hero Banner Section -->
+        <section id="home" class="hero app-section">
+            <div class="hero-content">
+                <span class="eyebrow">Creator Brand Collaboration Platform</span>
+                <h1>Connecting Brands with Creative Talent</h1>
+                <p>InfluenceX helps brands discover the perfect creators and empowers creators to grow through meaningful collaborations.</p>
+                <div class="hero-actions">
+                    <a href="#campaigns" class="btn">Explore Campaigns</a>
+                    <a href="#register" class="btn btn-outline">Register Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features app-section">
+            <div class="section-title">
+                <span class="eyebrow">Why Choose InfluenceX?</span>
+                <h2>One platform for discovery, campaigns, and insights</h2>
+            </div>
+            <div class="feature-container">
+                <div class="feature-card"><i class="fa-solid fa-magnifying-glass-chart"></i><h3>Creator Discovery</h3><p>Find creators based on niche, audience size, engagement rate, location, and content quality.</p></div>
+                <div class="feature-card"><i class="fa-solid fa-bullhorn"></i><h3>Campaign Management</h3><p>Launch, manage, and track influencer campaigns from a single responsive interface.</p></div>
+                <div class="feature-card"><i class="fa-solid fa-chart-line"></i><h3>Analytics Dashboard</h3><p>Measure campaign performance and maximize ROI through simple, useful insights.</p></div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="stats app-section">
+            <h2>Our Growing Network</h2>
+            <div class="stats-container">
+                <div class="stat-box"><h3>10K+</h3><p>Verified Creators</p></div>
+                <div class="stat-box"><h3>500+</h3><p>Partner Brands</p></div>
+                <div class="stat-box"><h3>2K+</h3><p>Campaigns Completed</p></div>
+            </div>
+        </section>
+
+        <!-- Creators Section with Search and Category Filter -->
+        <section id="creators" class="creators-section app-section">
+            <div class="section-title">
+                <span class="eyebrow">Featured Creators</span>
+                <h2>Discover creators across niches</h2>
+                <p>Click a category below or use the filters to show matching creators.</p>
+            </div>
+            <div class="toolbar">
+                <input type="search" id="creatorSearch" placeholder="Search creators, niches, or cities...">
+                <select id="creatorFilter">
+                    <option value="all">All Niches</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Fashion">Fashion</option>
+                    <option value="Gaming">Gaming</option>
+                    <option value="Fitness">Fitness</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Food & Travel">Food & Travel</option>
+                </select>
+            </div>
+            <div class="category-container inline-categories">
+                <button class="category-box active" data-category="all">All</button>
+                <button class="category-box" data-category="Technology">Technology</button>
+                <button class="category-box" data-category="Fashion">Fashion</button>
+                <button class="category-box" data-category="Gaming">Gaming</button>
+                <button class="category-box" data-category="Fitness">Fitness</button>
+                <button class="category-box" data-category="Sports">Sports</button>
+                <button class="category-box" data-category="Food & Travel">Food & Travel</button>
+            </div>
+            <div id="filterMessage" class="filter-message"></div>
+            <div id="creatorGrid" class="creator-grid"></div>
+        </section>
+
+        <!-- Brands Section with Search and Industry Filter -->
+        <section id="brands" class="brands-section app-section">
+            <div class="section-title">
+                <span class="eyebrow">Partner Brands</span>
+                <h2>Brands ready to collaborate</h2>
+                <p>Explore partner brands actively running creator marketing campaigns.</p>
+            </div>
+            <div class="toolbar">
+                <input type="search" id="brandSearch" placeholder="Search brands, industries, or cities...">
+                <select id="brandFilter">
+                    <option value="all">All Industries</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Fitness & Wellness">Fitness & Wellness</option>
+                    <option value="Fashion">Fashion</option>
+                    <option value="Gaming">Gaming</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Sportswear">Sportswear</option>
+                </select>
+            </div>
+            <div id="brandGrid" class="brand-grid"></div>
+        </section>
+
+        <!-- Campaigns Section -->
+        <section id="campaigns" class="campaigns-section app-section">
+            <div class="section-title">
+                <span class="eyebrow">Active Campaigns</span>
+                <h2>Collaboration opportunities</h2>
+                <p>Find campaigns that match your niche, budget expectations, and location.</p>
+            </div>
+            <div class="toolbar">
+                <input type="search" id="campaignSearch" placeholder="Search campaigns, brands, or categories...">
+                <select id="campaignFilter">
+                    <option value="all">All Categories</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Fitness">Fitness</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Fashion">Fashion</option>
+                    <option value="Gaming">Gaming</option>
+                </select>
+            </div>
+            <div id="campaignGrid" class="campaign-grid"></div>
+        </section>
+
+        <!-- Geolocation API Locator Section -->
+        <section id="locator" class="locator-section app-section">
+            <div class="section-title">
+                <span class="eyebrow">Geolocation API Upgrade</span>
+                <h2>Locate nearby brands and creators</h2>
+                <p>Allow browser location access to sort brands and creators by distance from you.</p>
+            </div>
+            <div class="locator-card">
+                <div><h3>Your Location</h3><p id="locationStatus">Location not detected yet.</p></div>
+                <button id="locateBtn"><i class="fa-solid fa-location-dot"></i> Use My Location</button>
+            </div>
+            <div class="nearby-layout">
+                <div><h3>Nearby Creators</h3><div id="nearbyCreators" class="mini-list"></div></div>
+                <div><h3>Nearby Brands</h3><div id="nearbyBrands" class="mini-list"></div></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section app-section">
+            <div class="about-content">
+                <span class="eyebrow">About InfluenceX</span>
+                <h2>Who We Are</h2>
+                <p>InfluenceX is a Creator–Brand Collaboration Platform designed to bridge the gap between content creators and businesses. Our platform enables brands to discover talented creators, launch marketing campaigns, and build long-term partnerships.</p>
+                <p>We believe that digital marketing should be simple, transparent, and beneficial for both brands and creators.</p>
+            </div>
+        </section>
+
+        <!-- Mission and Vision Section -->
+        <section class="mission-vision app-section">
+            <div class="mv-container">
+                <div class="mv-card"><h2>Our Mission</h2><p>To create a trusted platform that connects brands with creators and enables successful collaborations.</p></div>
+                <div class="mv-card"><h2>Our Vision</h2><p>To become the leading creator economy platform where businesses and creators collaborate globally.</p></div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section app-section">
+            <h2>Get In Touch</h2>
+            <p>Email: support@influencex.com</p>
+            <p>Phone: +91 98765 43210</p>
+            <p>Location: Bengaluru, Karnataka, India</p>
+        </section>
+
+
+        <!-- Register Section for Creators and Brands -->
+        <section id="register" class="register-section app-section">
+            <div class="section-title">
+                <span class="eyebrow">Join InfluenceX</span>
+                <h2>Register as a Creator or Brand</h2>
+                <p>Fill in your basic details to join the creator-brand collaboration network.</p>
+            </div>
+            <form id="registerForm" class="form-card">
+                <div class="role-toggle">
+                    <label><input type="radio" name="role" value="Creator" checked> Creator</label>
+                    <label><input type="radio" name="role" value="Brand"> Brand</label>
+                </div>
+                <div class="form-row">
+                    <div><label for="registerName">Full Name / Brand Name</label><input id="registerName" type="text" placeholder="Enter your name" required></div>
+                    <div><label for="registerEmail">Email Address</label><input id="registerEmail" type="email" placeholder="Enter your email" required></div>
+                </div>
+                <div class="form-row">
+                    <div><label for="registerPhone">Phone Number</label><input id="registerPhone" type="tel" placeholder="Enter phone number" required></div>
+                    <div><label for="registerCity">City</label><input id="registerCity" type="text" placeholder="Example: Bengaluru" required></div>
+                </div>
+                <div class="form-row">
+                    <div><label for="registerCategory">Niche / Industry</label><input id="registerCategory" type="text" placeholder="Technology, Fashion, Fitness..." required></div>
+                    <div><label for="registerSocial">Website / Social Link</label><input id="registerSocial" type="url" placeholder="https://example.com"></div>
+                </div>
+                <label for="registerMessage">Tell us about yourself</label>
+                <textarea id="registerMessage" rows="5" placeholder="Share your audience, goals, products, or campaign interests."></textarea>
+                <button type="submit">Submit Registration</button>
+                <p id="registerSuccess" class="success-message"></p>
+            </form>
+        </section>
+
+        <!-- Creator Portfolio and Booking Modal Section -->
+        <div id="creatorModal" class="modal" aria-hidden="true">
+            <div class="modal-content">
+                <button class="modal-close" id="closeModal" aria-label="Close creator portfolio">&times;</button>
+                <div id="creatorProfileContent"></div>
+                <form id="bookingForm" class="form-card embedded-form">
+                    <h2>Book this Creator</h2>
+                    <p>Specify basic details about your brand or product promotion.</p>
+                    <div class="form-row">
+                        <div><label for="brandName">Brand Name</label><input id="brandName" type="text" required></div>
+                        <div><label for="contactEmail">Contact Email</label><input id="contactEmail" type="email" required></div>
+                    </div>
+                    <div class="form-row">
+                        <div><label for="productName">Product / Service</label><input id="productName" type="text" required></div>
+                        <div><label for="campaignBudget">Campaign Budget</label><input id="campaignBudget" type="text" placeholder="Example: ₹50,000" required></div>
+                    </div>
+                    <label for="promotionGoal">Promotion Goal</label>
+                    <textarea id="promotionGoal" rows="4" placeholder="Describe the campaign, target audience, deliverables, and timeline." required></textarea>
+                    <button type="submit">Request Booking</button>
+                    <p id="bookingSuccess" class="success-message"></p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer><div class="footer-content"><h3>InfluenceX</h3><p>Connecting creators and brands through smarter digital collaborations.</p><p>&copy; 2026 InfluenceX. All Rights Reserved.</p></div></footer>
+
+    <!-- JavaScript Data, Filters, Geolocation, Portfolio Modal, Booking Form, and Register Form -->
+    <script>
+        const creators = [
+            { id: 'alex-johnson', name: 'Alex Johnson', niche: 'Technology', followers: '120K', engagement: '7.5%', city: 'Bengaluru', lat: 12.9716, lng: 77.5946, image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80', bio: 'Tech reviewer creating smartphone, gadget, and AI tool content for young professionals.', skills: ['Product Reviews', 'YouTube Shorts', 'Tech Tutorials'] },
+            { id: 'sophia-williams', name: 'Sophia Williams', niche: 'Fashion', followers: '250K', engagement: '8.2%', city: 'Mumbai', lat: 19.0760, lng: 72.8777, image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80', bio: 'Fashion creator producing styling reels, outfit transitions, and seasonal lookbooks.', skills: ['Instagram Reels', 'Styling', 'Lookbooks'] },
+            { id: 'michael-lee', name: 'Michael Lee', niche: 'Gaming', followers: '500K', engagement: '9.1%', city: 'Hyderabad', lat: 17.3850, lng: 78.4867, image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80', bio: 'Gaming streamer focused on hardware reviews, esports content, and live campaign drops.', skills: ['Live Streams', 'Gaming Reviews', 'Community Events'] },
+            { id: 'emma-davis', name: 'Emma Davis', niche: 'Fitness', followers: '180K', engagement: '6.8%', city: 'Delhi', lat: 28.6139, lng: 77.2090, image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80', bio: 'Fitness coach creating workout challenges, wellness videos, and healthy routine content.', skills: ['Fitness Challenges', 'Wellness Content', 'Brand Integrations'] },
+            { id: 'ryan-carter', name: 'Ryan Carter', niche: 'Sports', followers: '300K', engagement: '8.7%', city: 'Chennai', lat: 13.0827, lng: 80.2707, image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=80', bio: 'Sports creator working with sportswear, fitness gear, and athlete-focused campaigns.', skills: ['Sports Reels', 'Gear Promotion', 'Event Coverage'] },
+            { id: 'olivia-brown', name: 'Olivia Brown', niche: 'Food & Travel', followers: '210K', engagement: '7.9%', city: 'Goa', lat: 15.2993, lng: 74.1240, image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80', bio: 'Food and travel storyteller creating destination guides, hotel reels, and cafe reviews.', skills: ['Travel Vlogs', 'Food Reviews', 'Destination Guides'] }
+        ];
+
+        const brands = [
+            { name: 'TechNova', industry: 'Technology', campaigns: 12, hired: '250+', city: 'Bengaluru', lat: 12.9716, lng: 77.5946, image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80', description: 'Leading consumer electronics company focused on smartphones, accessories, and smart devices.' },
+            { name: 'FitLife', industry: 'Fitness & Wellness', campaigns: 8, hired: '180+', city: 'Delhi', lat: 28.6139, lng: 77.2090, image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80', description: 'Helping individuals achieve healthier lifestyles through fitness programs and products.' },
+            { name: 'StyleSphere', industry: 'Fashion', campaigns: 15, hired: '300+', city: 'Mumbai', lat: 19.0760, lng: 72.8777, image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=900&q=80', description: 'Modern fashion brand collaborating with creators to showcase seasonal collections.' },
+            { name: 'GameForge', industry: 'Gaming', campaigns: 10, hired: '220+', city: 'Hyderabad', lat: 17.3850, lng: 78.4867, image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80', description: 'Gaming hardware company producing premium gear for professional and casual gamers.' },
+            { name: 'ExploreGo', industry: 'Travel', campaigns: 7, hired: '140+', city: 'Goa', lat: 15.2993, lng: 74.1240, image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80', description: 'Travel platform offering unique experiences and destination packages worldwide.' },
+            { name: 'ProActive Sports', industry: 'Sportswear', campaigns: 9, hired: '190+', city: 'Chennai', lat: 13.0827, lng: 80.2707, image: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=900&q=80', description: 'Sports apparel company partnering with athletes and fitness influencers globally.' }
+        ];
+
+        const campaigns = [
+            { title: 'Smartphone Product Review', brand: 'TechNova', category: 'Technology', budget: '₹50,000', deadline: '30 July 2026', description: 'Looking for tech creators to review and showcase our latest flagship smartphone.' },
+            { title: 'Fitness Challenge Promotion', brand: 'FitLife', category: 'Fitness', budget: '₹35,000', deadline: '15 August 2026', description: 'Seeking fitness influencers to promote our 30-day transformation challenge.' },
+            { title: 'Sports Apparel Launch', brand: 'ProActive Sports', category: 'Sports', budget: '₹60,000', deadline: '10 August 2026', description: 'Collaborate with us to promote our latest premium sportswear collection.' },
+            { title: 'Travel Vlog Sponsorship', brand: 'ExploreGo', category: 'Travel', budget: '₹45,000', deadline: '20 August 2026', description: 'Looking for travel content creators to feature our holiday packages and destinations.' },
+            { title: 'Fashion Collection Showcase', brand: 'StyleSphere', category: 'Fashion', budget: '₹40,000', deadline: '5 August 2026', description: 'Fashion influencers required to promote our new seasonal collection.' },
+            { title: 'Gaming Gear Review', brand: 'GameForge', category: 'Gaming', budget: '₹55,000', deadline: '25 August 2026', description: 'Review and showcase our latest gaming keyboard, mouse, and headset collection.' }
+        ];
+
+        const creatorGrid = document.getElementById('creatorGrid');
+        const brandGrid = document.getElementById('brandGrid');
+        const campaignGrid = document.getElementById('campaignGrid');
+        let userPosition = null;
+
+        function distanceKm(a, b) {
+            const toRad = value => value * Math.PI / 180;
+            const R = 6371;
+            const dLat = toRad(b.lat - a.lat);
+            const dLng = toRad(b.lng - a.lng);
+            const lat1 = toRad(a.lat);
+            const lat2 = toRad(b.lat);
+            const h = Math.sin(dLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) ** 2;
+            return R * 2 * Math.atan2(Math.sqrt(h), Math.sqrt(1 - h));
+        }
+
+        function getDistanceText(item) {
+            if (!userPosition) return item.city;
+            return `${distanceKm(userPosition, item).toFixed(0)} km away • ${item.city}`;
+        }
+
+        function updateCategoryButtons(category) {
+            document.querySelectorAll('.category-box').forEach(button => button.classList.toggle('active', button.dataset.category === category));
+        }
+
+        function renderCreators() {
+            const search = document.getElementById('creatorSearch').value.toLowerCase();
+            const filter = document.getElementById('creatorFilter').value;
+            updateCategoryButtons(filter);
+            const filtered = creators.filter(creator => (filter === 'all' || creator.niche === filter) && `${creator.name} ${creator.niche} ${creator.city}`.toLowerCase().includes(search));
+            document.getElementById('filterMessage').textContent = filtered.length ? `Showing ${filtered.length} creator(s)${filter !== 'all' ? ' in ' + filter : ''}.` : 'No creators found for this category or search.';
+            creatorGrid.innerHTML = filtered.map(creator => `
+                <div class="creator-card">
+                    <img src="${creator.image}" alt="${creator.name}">
+                    <div class="card-body">
+                        <h3>${creator.name}</h3>
+                        <p><strong>Niche:</strong> ${creator.niche}</p>
+                        <p><strong>Followers:</strong> ${creator.followers}</p>
+                        <p><strong>Engagement:</strong> ${creator.engagement}</p>
+                        <p><strong>Location:</strong> ${getDistanceText(creator)}</p>
+                        <button class="small-btn" type="button" onclick="openCreatorProfile('${creator.id}')">View Portfolio</button>
+                    </div>
+                </div>`).join('');
+        }
+
+        function renderBrands() {
+            const search = document.getElementById('brandSearch').value.toLowerCase();
+            const filter = document.getElementById('brandFilter').value;
+            brandGrid.innerHTML = brands.filter(brand => (filter === 'all' || brand.industry === filter) && `${brand.name} ${brand.industry} ${brand.city}`.toLowerCase().includes(search)).map(brand => `
+                <div class="brand-card">
+                    <img src="${brand.image}" alt="${brand.name}">
+                    <h2>${brand.name}</h2>
+                    <p><strong>Industry:</strong> ${brand.industry}</p>
+                    <p><strong>Active Campaigns:</strong> ${brand.campaigns}</p>
+                    <p><strong>Creators Hired:</strong> ${brand.hired}</p>
+                    <p><strong>Location:</strong> ${getDistanceText(brand)}</p>
+                    <p>${brand.description}</p>
+                </div>`).join('');
+        }
+
+        function renderCampaigns() {
+            const search = document.getElementById('campaignSearch').value.toLowerCase();
+            const filter = document.getElementById('campaignFilter').value;
+            campaignGrid.innerHTML = campaigns.filter(campaign => (filter === 'all' || campaign.category === filter) && `${campaign.title} ${campaign.brand} ${campaign.category}`.toLowerCase().includes(search)).map(campaign => `
+                <div class="campaign-card">
+                    <h2>${campaign.title}</h2>
+                    <p><strong>Brand:</strong> ${campaign.brand}</p>
+                    <p><strong>Category:</strong> ${campaign.category}</p>
+                    <p><strong>Budget:</strong> ${campaign.budget}</p>
+                    <p><strong>Deadline:</strong> ${campaign.deadline}</p>
+                    <p>${campaign.description}</p>
+                    <button>Apply Now</button>
+                </div>`).join('');
+        }
+
+        function renderNearbyLists() {
+            const nearbyCreators = document.getElementById('nearbyCreators');
+            const nearbyBrands = document.getElementById('nearbyBrands');
+            if (!userPosition) {
+                nearbyCreators.innerHTML = '<p>Enable location to see nearby creators.</p>';
+                nearbyBrands.innerHTML = '<p>Enable location to see nearby brands.</p>';
+                return;
+            }
+            nearbyCreators.innerHTML = [...creators].sort((a, b) => distanceKm(userPosition, a) - distanceKm(userPosition, b)).slice(0, 3).map(item => `<div class="mini-card"><strong>${item.name}</strong><span>${item.niche}</span><small>${getDistanceText(item)}</small></div>`).join('');
+            nearbyBrands.innerHTML = [...brands].sort((a, b) => distanceKm(userPosition, a) - distanceKm(userPosition, b)).slice(0, 3).map(item => `<div class="mini-card"><strong>${item.name}</strong><span>${item.industry}</span><small>${getDistanceText(item)}</small></div>`).join('');
+        }
+
+
+
+        function openCreatorProfile(id) {
+            const creator = creators.find(item => item.id === id);
+            if (!creator) return;
+            document.getElementById('bookingSuccess').textContent = '';
+            document.getElementById('creatorProfileContent').innerHTML = `
+                <div class="profile-card-large modal-profile">
+                    <img src="${creator.image}" alt="${creator.name}">
+                    <div>
+                        <span class="eyebrow">Creator Portfolio</span>
+                        <h2>${creator.name}</h2>
+                        <p>${creator.bio}</p>
+                        <div class="profile-stats">
+                            <div><strong>${creator.followers}</strong><span>Followers</span></div>
+                            <div><strong>${creator.engagement}</strong><span>Engagement</span></div>
+                            <div><strong>${creator.city}</strong><span>Location</span></div>
+                        </div>
+                        <div class="skill-list">${creator.skills.map(skill => `<span>${skill}</span>`).join('')}</div>
+                    </div>
+                </div>`;
+            document.getElementById('creatorModal').classList.add('show');
+            document.getElementById('creatorModal').setAttribute('aria-hidden', 'false');
+        }
+
+        function closeCreatorProfile() {
+            document.getElementById('creatorModal').classList.remove('show');
+            document.getElementById('creatorModal').setAttribute('aria-hidden', 'true');
+        }
+
+        document.getElementById('locateBtn').addEventListener('click', () => {
+            const status = document.getElementById('locationStatus');
+            if (!navigator.geolocation) { status.textContent = 'Geolocation is not supported by this browser.'; return; }
+            status.textContent = 'Requesting your location...';
+            navigator.geolocation.getCurrentPosition(position => {
+                userPosition = { lat: position.coords.latitude, lng: position.coords.longitude };
+                status.textContent = `Detected: ${userPosition.lat.toFixed(4)}, ${userPosition.lng.toFixed(4)}. Results are now sorted by distance.`;
+                renderCreators(); renderBrands(); renderNearbyLists();
+            }, () => { status.textContent = 'Location permission denied or unavailable. You can still browse all brands and creators.'; });
+        });
+
+        document.getElementById('creatorSearch').addEventListener('input', renderCreators);
+        document.getElementById('creatorFilter').addEventListener('change', renderCreators);
+        document.getElementById('brandSearch').addEventListener('input', renderBrands);
+        document.getElementById('brandFilter').addEventListener('change', renderBrands);
+        document.getElementById('campaignSearch').addEventListener('input', renderCampaigns);
+        document.getElementById('campaignFilter').addEventListener('change', renderCampaigns);
+
+        document.querySelectorAll('.category-box').forEach(button => {
+            button.addEventListener('click', () => {
+                document.getElementById('creatorFilter').value = button.dataset.category;
+                document.getElementById('creatorSearch').value = '';
+                renderCreators();
+                document.getElementById('creators').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+        const sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', () => {
+            let current = 'home';
+            sections.forEach(section => { if (scrollY >= section.offsetTop - 130) current = section.id; });
+            navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${current}`));
+        });
+
+
+
+        document.getElementById('closeModal').addEventListener('click', closeCreatorProfile);
+        document.getElementById('creatorModal').addEventListener('click', event => {
+            if (event.target.id === 'creatorModal') closeCreatorProfile();
+        });
+
+        document.getElementById('bookingForm').addEventListener('submit', event => {
+            event.preventDefault();
+            document.getElementById('bookingSuccess').textContent = 'Booking request submitted successfully. The creator will be contacted soon.';
+            event.target.reset();
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', event => {
+            event.preventDefault();
+            const role = document.querySelector('input[name="role"]:checked').value;
+            document.getElementById('registerSuccess').textContent = `${role} registration submitted successfully.`;
+            event.target.reset();
+        });
+
+        renderCreators(); renderBrands(); renderCampaigns(); renderNearbyLists();
+    </script>
+</body>
+</html>
